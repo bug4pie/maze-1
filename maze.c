@@ -26,7 +26,6 @@ int is_wall(int maze[6][6], int x, int y);
 int at_goal(int maze[6][6]);
 void move(int maze[6][6], int log[6][6], int* p_history, int* p_back_flag);
 void print_result(int log[6][6]);
-int get_log_value(int log[6][6], int x, int y);
 int get_directions_size(int maze[6][6], int log[6][6]);
 void record_log(int maze[6][6], int log[6][6], int* p_history);
 void set_directions(int maze[6][6], int log[6][6], int *directions);
@@ -282,7 +281,6 @@ int back(int maze[6][6], int log[6][6], int* p_back_flag)
         }
     }
 
-    printf("back_flag: %d\n", *p_back_flag);
     return back_direction;
 }
 
@@ -299,11 +297,6 @@ void print_result(int log[6][6])
 {
     printf("------- RESULT --------\n");
     print_maze(log);
-}
-
-int get_log_value(int log[6][6], int x, int y)
-{
-    return log[x][y];
 }
 
 // 進むことのできる方向の個数を返す
