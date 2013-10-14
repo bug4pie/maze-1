@@ -42,13 +42,13 @@ void main()
     init_log(log);
     record_log(maze, log, &history);
 
-    print_maze(log);
-    printf("\n");
+    //print_maze(log);
+    //printf("\n");
 
     while (1) {
         move(maze, log, &history, &back_flag);
-        print_maze(log);
-        printf("\n");
+        //print_maze(log);
+        //printf("\n");
 
         if (at_goal(maze)) {
             printf("GOAL!!\n");
