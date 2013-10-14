@@ -240,7 +240,7 @@ void move(int maze[6][6], int log[6][6], int* p_history, int* p_back_flag)
     int directions_size = get_directions_size(maze, log);
 
     if (directions_size == 0) {
-        // 未通行の地点が四方に存在しない時
+        // まだ通っていない地点が四方に存在しない時
         if (*p_back_flag == 0) {
             *p_back_flag = log[crr_x][crr_y] - 1;
         }
@@ -316,7 +316,7 @@ int get_directions_size(int maze[6][6], int log[6][6])
         nxt_x = get_next_x(maze, direction);
         nxt_y = get_next_y(maze, direction);
 
-        // 未通行ならば、候補数をひとつ増やす
+        // まだ通っていないなら、候補数をひとつ増やす
         if (log[nxt_x][nxt_y] == 0) {
             directions_size++;
         }
@@ -338,7 +338,7 @@ void set_directions(int maze[6][6], int log[6][6], int *directions)
         nxt_x = get_next_x(maze, direction);
         nxt_y = get_next_y(maze, direction);
 
-        // 未通行ならば、その方向を配列に格納
+        // まだ通っていないなら、その方向を配列に格納
         if (log[nxt_x][nxt_y] == 0) {
             directions[k] = direction;
             k = k + 1;
